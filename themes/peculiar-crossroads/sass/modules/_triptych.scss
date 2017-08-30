@@ -1,14 +1,43 @@
 .triptych {
+	&__container {
+        @include grid-container;
+        margin-top: 80px;
+        margin-bottom: 90px;
+    }
+
     &__card {
-        @include grid-column(4);
+        @include grid-media($tablet-landscape) {
+            @include grid-column(4);
+        }
+    }
+
+    &__content {
+        background-color: $color__background-content;
+        padding-top: 32px;
+        padding-right: 35px;
+        padding-bottom: 60px;
+        padding-left: 35px;
+        font-size: 18px;
+
+        p {
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
     }
 
     &__footer {
         background-color: $color__background-nav;
         text-align: center;
+        font-size: 16px;
+        padding-top: 19px;
+        padding-right: 16px;
+        padding-bottom: 22px;
+        padding-left: 16px;
     }
 
     &__dagger {
         font-family: $font__header;
+        font-size: 20px;
     }
 }

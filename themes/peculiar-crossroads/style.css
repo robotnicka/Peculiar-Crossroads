@@ -621,17 +621,42 @@ a {
 /*--------------------------------------------------------------
 # Triptych
 --------------------------------------------------------------*/
-.triptych__card {
-  width: calc(33.33333% - 40px);
-  float: left;
-  margin-left: 30px; }
+.triptych__container {
+  margin-top: 80px;
+  margin-bottom: 90px; }
+  .triptych__container::after {
+    clear: both;
+    content: "";
+    display: block; }
+
+@media only screen and (min-width: 1024px) {
+  .triptych__card {
+    width: calc(33.33333% - 40px);
+    float: left;
+    margin-left: 30px; } }
+
+.triptych__content {
+  background-color: #313D3F;
+  padding-top: 32px;
+  padding-right: 35px;
+  padding-bottom: 60px;
+  padding-left: 35px;
+  font-size: 18px; }
+  .triptych__content p:last-of-type {
+    margin-bottom: 0; }
 
 .triptych__footer {
   background-color: #131D23;
-  text-align: center; }
+  text-align: center;
+  font-size: 16px;
+  padding-top: 19px;
+  padding-right: 16px;
+  padding-bottom: 22px;
+  padding-left: 16px; }
 
 .triptych__dagger {
-  font-family: "Libre Baskerville", serif; }
+  font-family: "Libre Baskerville", serif;
+  font-size: 20px; }
 
 /*--------------------------------------------------------------
 # Widgets
@@ -641,6 +666,29 @@ a {
   /* Make sure select elements fit in widgets. */ }
   .widget select {
     max-width: 100%; }
+
+.featured-event__content {
+  background-color: #313D3F;
+  padding-top: 32px;
+  padding-right: 35px;
+  padding-bottom: 60px;
+  padding-left: 35px;
+  font-size: 18px; }
+  .featured-event__content p:last-of-type {
+    margin-bottom: 0; }
+
+.featured-event__footer {
+  background-color: #131D23;
+  text-align: center;
+  font-size: 16px;
+  padding-top: 19px;
+  padding-right: 16px;
+  padding-bottom: 22px;
+  padding-left: 16px; }
+
+.featured-event__dagger {
+  font-family: "Libre Baskerville", serif;
+  font-size: 20px; }
 
 /*--------------------------------------------------------------
 # Footer
