@@ -1,0 +1,19 @@
+.site-branding {
+    &__logo {
+        display: inline-block;
+        width: 128px;
+        height: 128px;
+        fill: $white;
+        margin-top: 14px;
+    }
+}
+
+.site-header {
+    background-color: $color__background-nav;
+    text-align: center;
+}
+
+.menu-primary-menu-container {
+    margin-top: 35px;
+    text-transform: uppercase;
+}

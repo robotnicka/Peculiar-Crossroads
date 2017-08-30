@@ -1,0 +1,14 @@
+.triptych {
+    &__card {
+        @include grid-column(4);
+    }
+
+    &__footer {
+        background-color: $color__background-nav;
+        text-align: center;
+    }
+
+    &__dagger {
+        font-family: $font__header;
+    }
+}

@@ -1,0 +1,94 @@
+.site-footer {
+    background-color: $color__background-footer;
+
+    &__menu,
+    &__social,
+    &__branding {
+        text-align: center;
+
+        @include grid-media($tablet-landscape) {
+            @include grid-column(4);
+        }
+    }
+
+    &__menu,
+    &__social {
+        @include grid-media($tablet-landscape) {
+            margin-top: 123px;
+            text-align: left;
+        }
+    }
+
+    &__menu {
+        font-family: $font__header;
+        font-style: italic;
+
+        @include grid-media($tablet-landscape) {
+            @include grid-shift(-4);
+            font-size: rem(24);
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        li {
+            + li {
+                padding-top: 25px;
+            }
+        }
+    }
+
+    &__branding {
+        margin-top: 50px;
+
+        @include grid-media($tablet-landscape) {
+            @include grid-shift(4);
+        }
+    }
+
+    &__logo {
+        display: inline-block;
+        width: 98px;
+        height: 98px;
+        fill: $white;
+
+        @include grid-media($tablet-landscape) {
+            width: 128px;
+            height: 128px;
+        }
+    }
+
+    &__copyright,
+    &__links {
+        @include grid-container;
+        @include grid-column(12);
+        text-align: center;
+
+        a {
+            text-transform: uppercase;
+        }
+    }
+
+    &__copyright {
+        margin-top: 70px;
+        color: $color__text-footer;
+        font-size: rem(16);
+    }
+
+    &__links {
+        color: $color__text-footer-secondary;
+        font-size: rem(12);
+        margin-bottom: 60px;
+
+        a {
+            color: $color__text-footer-secondary;
+
+            &:hover {
+                color: $color__text-footer;
+            }
+        }
+    }
+}

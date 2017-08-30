@@ -1,0 +1,47 @@
+.sticky {
+	display: block;
+}
+
+.hentry {
+	margin: 0 0 1.5em;
+}
+
+.updated:not(.published) {
+	display: none;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+
+.widget-area {
+	margin-top: 34px;
+	margin-bottom: 50px;
+
+	@include grid-media($tablet-landscape) {
+		@include grid-column(4);
+		margin-top: 82px;
+	}
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+.site-main {
+	background-color: $color__background-content;
+	margin-top: 82px;
+	margin-bottom: 90px;
+	padding-top: 85px;
+	padding-right: percentage(75 / 1440);
+	padding-bottom: 48px;
+	padding-left: percentage(80 / 1440);
+
+	@include grid-media($tablet-landscape) {
+		@include grid-column(8);
+	}
+}
+
