@@ -1,5 +1,7 @@
 .site-footer {
     background-color: $color__background-footer;
+    position: relative;
+    overflow: hidden;
 
     &__menu,
     &__social,
@@ -20,16 +22,20 @@
     }
 
     &__menu {
+        position: relative;
+        z-index: 2;
         font-family: $font__header;
         font-style: italic;
+        margin-bottom: 95px;
 
         @include grid-media($tablet-landscape) {
             @include grid-shift(-4);
             font-size: rem(24);
+            margin-bottom: 0;
         }
 
         ul {
-            margin: 0;
+            margin: 0 16px;
             padding: 0;
             list-style: none;
         }
@@ -43,13 +49,17 @@
 
     &__branding {
         margin-top: 50px;
+        margin-bottom: 64px;
 
         @include grid-media($tablet-landscape) {
             @include grid-shift(4);
+            margin-bottom: 0;
         }
     }
 
     &__logo {
+        position: relative;
+        z-index: 2;
         display: inline-block;
         width: 98px;
         height: 98px;
@@ -61,11 +71,50 @@
         }
     }
 
+    &__social {
+        position: relative;
+        z-index: 2;
+
+        ul {
+            list-style: none;
+            margin-left: 0;
+            padding-left: 0;
+            padding-bottom: 0;
+            width: auto;
+            display: inline-block;
+            text-align: left;
+
+            @include grid-media($tablet-landscape) {
+                margin: 0;
+            }
+        }
+
+        li {
+            font-size: 18px;
+            letter-spacing: 2px;
+
+            + li {
+                padding-top: 35px;
+            }
+        }
+    }
+
+    &__icon {
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        vertical-align: middle;
+        margin-right: 15px;
+        fill: $white;
+    }
+
     &__copyright,
     &__links {
         @include grid-container;
         @include grid-column(12);
         text-align: center;
+        position: relative;
+        z-index: 2;
 
         a {
             text-transform: uppercase;
@@ -89,6 +138,38 @@
             &:hover {
                 color: $color__text-footer;
             }
+        }
+    }
+}
+
+.esoteric-shapes {
+    &--one {
+        opacity: .7;
+        display: block;
+        position: absolute;
+        stroke: $color__background-content;
+        fill: transparent;
+        top: -15%;
+        right: 10%;
+        height: 382px;
+        width: 475px;
+    }
+
+    &--two {
+        opacity: .7;
+        display: block;
+        position: absolute;
+        stroke: $color__background-content;
+        fill: transparent;
+        top: auto;
+        left: 5%;
+        height: 382px;
+        width: 475px;
+        bottom: 0;
+
+        @include grid-media($tablet-landscape) {
+            top: 0;
+            bottom: auto;
         }
     }
 }

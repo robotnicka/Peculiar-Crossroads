@@ -282,7 +282,43 @@
 
 		?>
 		<div class="site-footer__social">
-			social
+			<ul>
+				<li>
+					<a href="<?php echo esc_url( get_theme_mod( 'peculiar_subscribe' ) ); ?>" target="_blank">
+					<span class="site-footer__icon site-footer__icon--subscribe">
+						<svg viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+		                	<path d="M0,16 C0,24.8685714 7.13142857,32 16,32 C24.8685714,32 32,24.8685714 32,16 C32,7.13142857 24.8685714,0 16,0 C7.13142857,0 0,7.13142857 0,16 Z M14.6285714,9.78285714 L22.0342857,16.0914286 L14.6285714,22.3542857 C14.2171429,22.72 13.5771429,22.6742857 13.2114286,22.2628571 C12.8457143,21.8514286 12.8914286,21.2114286 13.3028571,20.8457143 L18.9257143,16.0914286 L13.3028571,11.3371429 C12.8914286,10.9714286 12.8457143,10.3314286 13.2114286,9.92 C13.5771429,9.50857143 14.2171429,9.46285714 14.6285714,9.78285714 Z" id="Shape"></path>
+						</svg>
+					</span>
+					Subscribe to our newsletter
+					</a>
+				</li>
+				<li>
+					<a href="<?php echo esc_url( 'mailto:' . get_theme_mod( 'peculiar_email' ), 'mailto' ); ?>">
+					<span class="site-footer__icon site-footer__icon--mail">
+					<svg version="1.1"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 246 246">
+						<path class="st0" d="M123,0C55.1,0,0,55.1,0,123s55.1,123,123,123s123-55.1,123-123S190.9,0,123,0z M192.6,72L123,147.5L53.4,72
+							H192.6z M48.2,77.3l52.5,56.9l-52.5,36.7V77.3z M57.4,174l-0.1-0.3l48.4-33.8c4.7,5.1,9.4,10.1,14,15.1c0.6,1,1.8,1.6,3,1.4
+							c1.1-0.2,2-0.8,2.9-1.5c4.8-5,9.5-10.1,14.3-15.3l48.8,34.4H57.4z M197.8,170.9l-52.5-36.7l52.5-56.9V170.9z"/>
+					</svg>
+					</span>
+					Contact us
+					</a>
+				</li>
+				<li>
+					<a href="<?php echo esc_url( get_theme_mod( 'peculiar_social' ) ); ?>" target="_blank">
+					<span class="site-footer__icon site-footer__icon--follow">
+						<svg version="1.1" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 246 246">
+						<path class="st0" d="M246,123C246,55.1,190.9,0,123,0S0,55.1,0,123s55.1,123,123,123c2.6,0,5.2-0.1,7.8-0.3v-92.3h-29.6v-34.3h29.6
+							V93.8c0-29.4,17.9-45.3,44.1-45.3c12.5,0,23.3,0.9,26.5,1.4v30.7l-18.2,0c-14.2,0-17,6.8-17,16.7v21.9h34l-4.4,34.3h-29.5v84.8
+							C212.8,220.7,246,175.7,246,123z"/>
+						</svg>
+					</span>
+					Follow us on Facebook
+					</a>
+				</li>
+			</ul>
+
 		</div>
 		<div class="site-footer__copyright">
 			<span>&copy; <?php echo date('Y'); ?> Peculiar Crossroads Productions, LLC</span>
@@ -294,6 +330,45 @@
 				/* translators: 1: Theme name, 2: Theme author. */
 				printf( esc_html__( 'Design &amp; Development by %2$s', 'peculiar-crossroads' ), 'peculiar-crossroads', '<a href="http://www.emilymentrek.com" target="_blank">Emily</a>' );
 			?></span>
+		</div>
+		<div class="esoteric-shapes--one">
+
+			<svg viewBox="0 0 382 475" version="1.1" xmlns="http://www.w3.org/2000/svg">
+
+                <polygon id="Triangle" points="215 98 342 314 88 314"></polygon>
+                <polygon id="Triangle" points="246 293 119 77 373 77"></polygon>
+                <path d="M72.5,241.5 L214.5,0.5" id="Line" stroke-linecap="square"></path>
+                <path d="M50.5,505.5 L302.5,77.5" id="Line" stroke-linecap="square"></path>
+                <circle id="Oval" cx="303" cy="77" r="60"></circle>
+                <circle id="Oval" cx="88" cy="308" r="88"></circle>
+                <circle id="Oval" cx="341.5" cy="308.5" r="38.5"></circle>
+
+			</svg>
+
+		</div>
+		<div class="esoteric-shapes--two">
+
+			<svg viewBox="0 0 492 426" version="1.1" xmlns="http://www.w3.org/2000/svg">
+
+                <circle id="Oval" cx="480" cy="191" r="11"></circle>
+                <path d="M246.078586,191.987551 L469.457188,191.987551" id="Line-3" stroke-linecap="square"></path>
+                <rect id="Rectangle-2" transform="translate(309.129884, 278.038849) rotate(-315.000000) translate(-309.129884, -278.038849) " x="228.629884" y="197.538849" width="161" height="161"></rect>
+                <rect id="Rectangle-2" transform="translate(309.129884, 243.038849) rotate(-315.000000) translate(-309.129884, -243.038849) " x="228.629884" y="162.538849" width="161" height="161"></rect>
+                <path d="M309.078586,257.98951 L309.078586,2.83242457" id="Line-2" stroke-linecap="square"></path>
+                <path d="M298.5,138.5 L278.688387,118.688387" id="Line-5" stroke-linecap="square"></path>
+                <path d="M284.5,426.5 L264.688387,406.688387" id="Line-5" stroke-linecap="square"></path>
+                <path d="M277.5,159.5 L257.688387,139.688387" id="Line-5" stroke-linecap="square"></path>
+                <path d="M257.5,178.5 L237.688387,158.688387" id="Line-5" stroke-linecap="square"></path>
+                <path d="M237.5,198.5 L217.688387,178.688387" id="Line-5" stroke-linecap="square"></path>
+                <path d="M216.5,219.5 L196.688387,199.688387" id="Line-5" stroke-linecap="square"></path>
+                <path d="M278.168429,58.9719259 C380.585421,67.1870942 441.021374,127.623048 459.47629,240.279787" id="Path"></path>
+                <path d="M255.078586,397.987551 L20.2967719,163.205737" id="Line-4" stroke-linecap="square"></path>
+                <circle id="Oval-3" cx="137.578586" cy="278.487551" r="79"></circle>
+                <path d="M318.078586,1.98755089 L301.078586,1.98755089" id="Line-6" stroke-linecap="square"></path>
+                <path d="M318.078586,258.987551 L301.078586,258.987551" id="Line-6" stroke-linecap="square"></path>
+                <path d="M333.121119,206.987551 L286.078586,206.987551" id="Line-6" stroke-linecap="square"></path>
+                <circle id="Oval-4" cx="11.5785855" cy="154.487551" r="11"></circle>
+			</svg>
 		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->

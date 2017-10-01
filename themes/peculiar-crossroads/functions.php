@@ -84,6 +84,7 @@ endif;
 
 add_action( 'after_setup_theme', 'peculiar_crossroads_setup' );
 
+
 function peculiar_custom_new_menu() {
   register_nav_menu('footer-menu',__( 'Footer Menu' ));
 }
@@ -112,13 +113,38 @@ function peculiar_crossroads_widgets_init() {
 		'name'          => esc_html__( 'Sidebar', 'peculiar-crossroads' ),
 		'id'            => 'sidebar-1',
 		'description'   => esc_html__( 'Add widgets here.', 'peculiar-crossroads' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '',
+		'after_title'   => '',
 	) );
+	register_sidebar(array(
+	    'name' => 'Front Page Triptych',
+	    'id'            => 'sidebar-2',
+	    'before_widget' => '',
+	    'after_widget' => '',
+	    'before_title' => '',
+	    'after_title' => '',
+	  )
+	);
 }
 add_action( 'widgets_init', 'peculiar_crossroads_widgets_init' );
+
+function pc_fpw_add_widget_template( $templates ) {
+	unset($templates['wrapped'],$templates['big'],$templates['banner']);
+	$templates['triptych'] = __( 'Triptych', 'triptych' );
+	$templates['featured-post'] = __( 'Featured Post', 'featured-post' );
+	return $templates;
+}
+add_filter( 'fpw_widget_templates', 'pc_fpw_add_widget_template' );
+
+function pc_edit_widget_title($title, $instance ) {
+    // Maybe modify $example in some way.
+    if(isset($instance['layout']) && in_array($instance['layout'],Array('triptych','featured-post'))) $title = '';
+    return $title;
+}
+add_filter( 'widget_title', 'pc_edit_widget_title', 10, 2 );
+
 
 /**
  * Enqueue scripts and styles.
@@ -135,40 +161,72 @@ function peculiar_crossroads_scripts() {
 	}
 }
 
+function peculiar_customize_register_sections( $wp_customize ) {
+	// Do stuff with $wp_customize, the WP_Customize_Manager object.
+
+	// Add a footer/copyright information section.
+	$wp_customize->add_section( 'peculiar_footer' , array(
+		'title' => __( 'Footer', 'peculiar_crossroads' ),
+		'description' => 'Configure your site footer links.',
+		'capability'  => 'edit_theme_options',
+		'priority' => 200, // After additional CSS.
+	) );
+};
+
+// Register a Theme Customizer Section
+function peculiar_register_customizer_settings( $wp_customize ) {
+    // Footer links
+
+    $wp_customize->add_setting( 'peculiar_social', array(
+        'type'       => 'theme_mod',
+		'section'    => 'peculiar_footer', // Add a default or your own section
+		'capability' => 'edit_theme_options',
+    ) );
+
+    $wp_customize->add_setting( 'peculiar_email', array(
+        'type'       => 'theme_mod',
+		'section'    => 'peculiar_footer', // Add a default or your own section
+		'capability' => 'edit_theme_options',
+    ) );
+
+    $wp_customize->add_setting( 'peculiar_subscribe', array(
+        'type'       => 'theme_mod',
+		'section'    => 'peculiar_footer', // Add a default or your own section
+		'capability' => 'edit_theme_options',
+    ) );
+
+   $wp_customize->add_control( 'peculiar_social_control', array(
+    	'type'       => 'url',
+        'label'      => __( 'Peculiar Footer link to social media page', 'Peculiar' ),
+        'settings'   => 'peculiar_social',
+        'priority'   => 10,
+        'section'    => 'peculiar_footer',
+    ) );
+
+    $wp_customize->add_control( 'peculiar_email_control', array(
+    	'type'       => 'email',
+        'label'      => __( 'Peculiar Footer Email Link', 'Peculiar' ),
+        'settings'   => 'peculiar_email',
+        'priority'   => 10,
+        'section'    => 'peculiar_footer',
+    ) );
+
+    $wp_customize->add_control( 'peculiar_susbcribe_control', array(
+    	'type'       => 'url',
+        'label'      => __( 'Peculiar Footer link for mailing list subscription page', 'Peculiar' ),
+        'settings'   => 'peculiar_subscribe',
+        'priority'   => 10,
+        'section'    => 'peculiar_footer',
+    ) );
+};
+
+add_action( 'customize_register', 'peculiar_customize_register_sections', 19 );
+
+// Notice how the action is 20, so our setting & control are
+// registered *after* the section is registered.
+add_action( 'customize_register', 'peculiar_register_customizer_settings', 20, 1);
+
 add_action( 'wp_enqueue_scripts', 'peculiar_crossroads_scripts' );
-
-function peculiar_featured_posts( $post_id ) {
-	global $post;
-
-    // add_filter( 'post_class', array( $this, 'post_class_it_up' ), 10, 3 );
-
-	$this->cpto_enabled( false );
-
-	if ( empty( $post_id ) && ! empty( $post->ID ) ) {
-		$post_id = $post->ID;
-	}
-
-	if ( ! empty( $post_id ) ) {
-
-		$ymal_posts = array(
-			$this->settings->get_setting( 'YMAL_one', $post_id ),
-			$this->settings->get_setting( 'YMAL_two', $post_id ),
-			$this->settings->get_setting( 'YMAL_three', $post_id ),
-		);
-
-		if ( ! empty( $ymal_posts ) && count( $ymal_posts ) === 3 && ! in_array( -1, $ymal_posts ) ) {
-
-			$this->get_template('content', 'you_may_also_like', array(
-				'plugin' 		=> $this,
-				'ymal_posts'	=> $ymal_posts,
-			) );
-		}
-	}
-
-    remove_filter( 'post_class', array( $this, 'post_class_it_up' ), 10, 3 );
-
-	$this->cpto_enabled();
-}
 
 /**
  * Implement the Custom Header feature.

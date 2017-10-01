@@ -1,19 +1,100 @@
 .site-branding {
+    @include grid-column(6);
+
+    @include grid-media($tablet-landscape) {
+        @include grid-column(12);
+    }
+
     &__logo {
         display: inline-block;
         width: 128px;
-        height: 128px;
+        height: 65px;
         fill: $white;
         margin-top: 14px;
+
+        @include grid-media($tablet-landscape) {
+            height: 128px;
+        }
+
+        &--mobile {
+            width: 200px;
+        }
+
+        &--desktop {
+            display: none;
+        }
+
+        @include grid-media($tablet-landscape) {
+            width: 690px;
+
+            &--mobile {
+                display: none;
+            }
+
+            &--desktop {
+                display: block;
+            }
+        }
+    }
+
+    &__hamburger {
+        display: block;
+        stroke: $white;
+        stroke-width: 4px;
+    }
+
+    &__navigation-button {
+        @include grid-column(6);
+
+        @include grid-media($tablet-landscape) {
+            @include grid-column(6);
+        }
+    }
+}
+
+.logo {
+    &__text {
+        opacity: .8;
+    }
+}
+
+.main-navigation {
+    @include grid-container;
+}
+
+.button-container {
+    text-align: right;
+
+    @include grid-media($tablet-landscape) {
+        display: none;
+    }
+}
+
+.menu-toggle {
+    background-color: transparent;
+    border: 0;
+    opacity: .8;
+
+
+    &:hover {
+        opacity: 1;
     }
 }
 
 .site-header {
     background-color: $color__background-nav;
-    text-align: center;
+
+    @include grid-media($tablet-landscape) {
+        text-align: center;
+    }
 }
 
 .menu-primary-menu-container {
+    @include grid-container;
     margin-top: 35px;
     text-transform: uppercase;
+
+    @include grid-media($tablet) {
+        text-align: center;
+    }
 }

@@ -43,5 +43,24 @@
 	@include grid-media($tablet-landscape) {
 		@include grid-column(8);
 	}
+
+	a {
+		border-bottom: 1px solid rgba(255, 255, 255, .1);
+	}
 }
 
+.home-page {
+	&__marquee {
+		@extend %images--marquee;
+	}
+}
+
+.normal_posts {
+	margin-right: 16px;
+	margin-left: 16px;
+
+	@include grid-media($tablet-landscape) {
+		margin-right: 0;
+		margin-left: 0;
+	}
+}
