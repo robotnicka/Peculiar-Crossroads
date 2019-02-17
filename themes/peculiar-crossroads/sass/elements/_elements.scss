@@ -23,6 +23,7 @@ blockquote, q {
 
 hr {
 	background-color: $color__background-hr;
+	opacity: .5;
 	border: 0;
 	height: 1px;
 	margin-bottom: 1.5em;
@@ -30,10 +31,48 @@ hr {
 
 @import "lists";
 
-img {
+// img {
+// 	height: auto; /* Make sure images are scaled correctly. */
+// 	width: 100%;
+// 	max-width: 100%; /* Adhere to container width. */
+// }
+
+.featured-post__image,
+.home-page__marquee,
+.triptych__image {
+	img {
+		height: auto; /* Make sure images are scaled correctly. */
+		width: 100%;
+		max-width: 100%; /* Adhere to container width. */
+	}
+}
+
+.survey-button {
+	display: inline-block;
+	background-color: #e50a4f;
+	padding: 20px 30px;
+	letter-spacing: 2px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-decoration: none;
+	font-weight: bold;
+	border-bottom: 0;
+	transition: background-color .2s ease-in-out, color .2s ease-in-out;
+	
+	&:hover {
+		// background-color: darken(#e50a4f, 15%);
+		background-color: #006a92;
+	}
+}
+
+img.size-full {
 	height: auto; /* Make sure images are scaled correctly. */
 	width: 100%;
 	max-width: 100%; /* Adhere to container width. */
+}
+
+img.size-thumbnail {
+	width: 150px;
 }
 
 figure {
