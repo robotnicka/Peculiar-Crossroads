@@ -284,16 +284,6 @@
 		<div class="site-footer__social">
 			<ul>
 				<li>
-					<a href="<?php echo esc_url( get_theme_mod( 'peculiar_subscribe' ) ); ?>" target="_blank">
-					<span class="site-footer__icon site-footer__icon--subscribe">
-						<svg viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
-		                	<path d="M0,16 C0,24.8685714 7.13142857,32 16,32 C24.8685714,32 32,24.8685714 32,16 C32,7.13142857 24.8685714,0 16,0 C7.13142857,0 0,7.13142857 0,16 Z M14.6285714,9.78285714 L22.0342857,16.0914286 L14.6285714,22.3542857 C14.2171429,22.72 13.5771429,22.6742857 13.2114286,22.2628571 C12.8457143,21.8514286 12.8914286,21.2114286 13.3028571,20.8457143 L18.9257143,16.0914286 L13.3028571,11.3371429 C12.8914286,10.9714286 12.8457143,10.3314286 13.2114286,9.92 C13.5771429,9.50857143 14.2171429,9.46285714 14.6285714,9.78285714 Z" id="Shape"></path>
-						</svg>
-					</span>
-					Subscribe to our newsletter
-					</a>
-				</li>
-				<li>
 					<a href="<?php echo esc_url( 'mailto:' . get_theme_mod( 'peculiar_email' ), 'mailto' ); ?>">
 					<span class="site-footer__icon site-footer__icon--mail">
 					<svg version="1.1"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 246 246">

@@ -19,7 +19,6 @@
 		}
 
 		ul {
-			float: left;
 			top: 100%;
 			left: -999em;
 			z-index: 99999;
@@ -34,6 +33,7 @@
 			letter-spacing: 1.2px;
 			
 			@include grid-media($tablet-landscape) {
+				float: left;
 				position: absolute;
 			}
 

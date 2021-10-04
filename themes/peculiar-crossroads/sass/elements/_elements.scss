@@ -71,6 +71,14 @@ img.size-full {
 	max-width: 100%; /* Adhere to container width. */
 }
 
+.size-full {
+	img {
+		height: auto; /* Make sure images are scaled correctly. */
+		width: 100%;
+		max-width: 100%; /* Adhere to container width. */
+	}
+}
+
 img.size-thumbnail {
 	width: 150px;
 }
