@@ -47,6 +47,14 @@
 	a {
 		border-bottom: 1px solid rgba(255, 255, 255, .1);
 	}
+	
+	&--full {
+		@include grid-media($tablet-landscape) {
+			margin-right: auto;
+			margin-left: auto;
+			float: none;
+		}
+	}
 }
 
 .home-page {
